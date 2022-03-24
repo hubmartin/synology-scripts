@@ -107,10 +107,11 @@ fi
 #  Reconnect the VPN connection
 #-------------------------------------------------------------------------------
 
-if [[ $PROFILE_RECONNECT != "yes" ]]; then
-	echo "[W] Reconnect is disabled. Please enable reconnect for for the \"$PROFILE_NAME\" VPN profile. Exiting..."
-	exit 3
-fi
+# Disable because when enabled, Synology reconnects every 60 seconds, probably because my VPN does not support pings
+#if [[ $PROFILE_RECONNECT != "yes" ]]; then
+#	echo "[W] Reconnect is disabled. Please enable reconnect for for the \"$PROFILE_NAME\" VPN profile. Exiting..."
+#	exit 3
+#fi
 
 echo "[I] Attempting to reconnect..."
 /usr/syno/bin/synovpnc kill_client
